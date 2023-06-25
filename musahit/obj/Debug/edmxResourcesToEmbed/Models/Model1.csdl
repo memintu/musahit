@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tkh2022Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CatId" />
+    </Key>
+    <Property Name="CatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Categories" FromRole="Categories" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Code">
+    <Key>
+      <PropertyRef Name="CodeID" />
+    </Key>
+    <Property Name="CodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Head_Top" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Head_Bottom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Body_Top" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Body_Bottom" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Companys">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ContactForm">
+    <Key>
+      <PropertyRef Name="ContactFormID" />
+    </Key>
+    <Property Name="ContactFormID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="contact_form_typeID" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="special_value1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="special_value2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="special_value3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="special_numeric_value1" Type="Boolean" />
+    <Property Name="special_numeric_value2" Type="Int32" />
+    <Property Name="special_numeric_value3" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="detail" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="entry_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="WebSite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Faq">
+    <Key>
+      <PropertyRef Name="FaqId" />
+    </Key>
+    <Property Name="FaqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectId" Type="Int32" />
+    <Property Name="Question" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalLink" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Hashtags">
+    <Key>
+      <PropertyRef Name="HashtagId" />
+    </Key>
+    <Property Name="HashtagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PostId" Type="Int32" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Hashtags_Posts" FromRole="Hashtags" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LanguageName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TableId" Type="Int32" />
+    <Property Name="TableName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="FileName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ListId" Type="Int32" />
+    <Property Name="FileUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FileType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Alt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MenuCat">
+    <Key>
+      <PropertyRef Name="menuID" />
+    </Key>
+    <Property Name="menuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuCatName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Menus" Relationship="Self.FK_Menus_MenuCat" FromRole="MenuCat" ToRole="Menus" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="elementID" />
+    </Key>
+    <Property Name="elementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="menuID" Type="Int32" />
+    <Property Name="menuName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="parentID" Type="Int16" />
+    <Property Name="imageURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="iconURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="linkURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="MenuOrder" Type="Int32" />
+    <Property Name="HasSub" Type="Boolean" />
+    <Property Name="HasThird" Type="Boolean" />
+    <NavigationProperty Name="MenuCat" Relationship="Self.FK_Menus_MenuCat" FromRole="Menus" ToRole="MenuCat" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="PageId" />
+    </Key>
+    <Property Name="PageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Spot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="PageTypeId" Type="Int32" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PageName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="ListId" Type="Int32" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="true" Unicode="true" />
+    <Property Name="has_translate" Type="Boolean" />
+    <Property Name="icon" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="ImgAlt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="masterPageId" Type="Int32" />
+    <NavigationProperty Name="PageType" Relationship="Self.FK_Pages_PageType" FromRole="Pages" ToRole="PageType" />
+  </EntityType>
+  <EntityType Name="PageType">
+    <Key>
+      <PropertyRef Name="PageTypeId" />
+    </Key>
+    <Property Name="PageTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="master_page_typeID" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="page_type_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pages" Relationship="Self.FK_Pages_PageType" FromRole="PageType" ToRole="Pages" />
+  </EntityType>
+  <EntityType Name="Persons">
+    <Key>
+      <PropertyRef Name="PersonId" />
+    </Key>
+    <Property Name="PersonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PersonTypeId" Type="Int32" />
+    <Property Name="listID" Type="Int32" />
+    <Property Name="has_translate" Type="Boolean" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="HeaderImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_Persons" FromRole="Persons" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostTypeId" Type="Int32" />
+    <Property Name="TagId" Type="Int32" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PersonId" Type="Int32" />
+    <Property Name="CatId" Type="Int32" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ListId" Type="Int32" />
+    <Property Name="EmbedCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="has_translate" Type="Boolean" />
+    <Property Name="TagsName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TagsNameSlug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImgAlt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue4" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue5" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue6" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue7" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue8" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue9" Type="Int32" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Posts_Categories" FromRole="Posts" ToRole="Categories" />
+    <NavigationProperty Name="Hashtags" Relationship="Self.FK_Hashtags_Posts" FromRole="Posts" ToRole="Hashtags" />
+    <NavigationProperty Name="Persons" Relationship="Self.FK_Posts_Persons" FromRole="Posts" ToRole="Persons" />
+    <NavigationProperty Name="PostType" Relationship="Self.FK_Posts_PostType" FromRole="Posts" ToRole="PostType" />
+    <NavigationProperty Name="Tags" Relationship="Self.FK_Tags_Posts1" FromRole="Posts" ToRole="Tags" />
+  </EntityType>
+  <EntityType Name="PostsTags">
+    <Key>
+      <PropertyRef Name="PostsTagId" />
+    </Key>
+    <Property Name="PostsTagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PostID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PostsTMP">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostTypeId" Type="Int32" />
+    <Property Name="TagId" Type="Int32" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PersonId" Type="Int32" />
+    <Property Name="CatId" Type="Int32" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ListId" Type="Int32" />
+    <Property Name="EmbedCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="has_translate" Type="Boolean" />
+    <Property Name="TagsName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TagsNameSlug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImgAlt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PostsWP">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Excerpt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateST" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="PostType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Permalink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImageURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Kategoriler" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PostTypeId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PostType">
+    <Key>
+      <PropertyRef Name="PostTypeId" />
+    </Key>
+    <Property Name="PostTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="master_post_typeID" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="post_type_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Posts_PostType" FromRole="PostType" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="PostType2">
+    <Key>
+      <PropertyRef Name="PostTypeId" />
+    </Key>
+    <Property Name="PostTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="master_post_typeID" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="post_type_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="product_typeID" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="spot" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="short_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="short_description2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_direction" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="product_external_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="product_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="product_file" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="listID" Type="Int32" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="has_translate" Type="Boolean" />
+    <Property Name="list_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="list_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="list_title_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="list_title_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ProductType" Relationship="Self.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+  </EntityType>
+  <EntityType Name="ProductFeature">
+    <Key>
+      <PropertyRef Name="ProductFeatureId" />
+    </Key>
+    <Property Name="ProductFeatureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="icon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="productId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeId" />
+    </Key>
+    <Property Name="ProductTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="master_product_typeID" Type="Int32" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="product_type_url" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HeaderImg" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="SettingId" />
+    </Key>
+    <Property Name="SettingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SiteDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SiteEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SitePhone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SiteAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpServer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpPort" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpLogin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SmtpSsl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Facebook" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Instagram" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Linkedin" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Youtube" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Twitter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SiteMap">
+    <Key>
+      <PropertyRef Name="SiteMapId" />
+    </Key>
+    <Property Name="SiteMapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="SliderId" />
+    </Key>
+    <Property Name="SliderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Caption1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Caption2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Caption3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ButtonText" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalLink" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TextLink" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsLightbox" Type="Int32" />
+    <Property Name="SliderCategoryId" Type="Int32" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="OrderNumber" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Subes">
+    <Key>
+      <PropertyRef Name="SubeId" />
+    </Key>
+    <Property Name="SubeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SevetaSubeId" Type="Int32" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmbedCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="has_translate" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PostID" Type="Int32" />
+    <Property Name="PostTypeId" Type="Int32" />
+    <NavigationProperty Name="Posts" Relationship="Self.FK_Tags_Posts1" FromRole="Tags" ToRole="Posts" />
+  </EntityType>
+  <EntityType Name="Translations">
+    <Key>
+      <PropertyRef Name="PageTranslationId" />
+    </Key>
+    <Property Name="PageTranslationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableId" Type="Int32" />
+    <Property Name="TableName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="LanguageName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Spot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialValue3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Slug" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VideoURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FileUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="MetaDescription" Type="String" MaxLength="320" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TagsName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TagsNameSlug" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ImgAlt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EmbedCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitId" />
+    </Key>
+    <Property Name="UnitId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="order_number" Type="Int32" />
+    <Property Name="name_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RoleId" Type="Int32" />
+    <NavigationProperty Name="Roles" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <Association Name="FK_Posts_Categories">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="CatId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="CatId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hashtags_Posts">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
+    <End Role="Hashtags" Type="Self.Hashtags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Hashtags">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menus_MenuCat">
+    <End Role="MenuCat" Type="Self.MenuCat" Multiplicity="0..1" />
+    <End Role="Menus" Type="Self.Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuCat">
+        <PropertyRef Name="menuID" />
+      </Principal>
+      <Dependent Role="Menus">
+        <PropertyRef Name="menuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_PageType">
+    <End Role="PageType" Type="Self.PageType" Multiplicity="0..1" />
+    <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PageType">
+        <PropertyRef Name="PageTypeId" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="PageTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_Persons">
+    <End Role="Persons" Type="Self.Persons" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Persons">
+        <PropertyRef Name="PersonId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Posts_PostType">
+    <End Role="PostType" Type="Self.PostType" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PostType">
+        <PropertyRef Name="PostTypeId" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="PostTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tags_Posts1">
+    <End Role="Posts" Type="Self.Posts" Multiplicity="0..1" />
+    <End Role="Tags" Type="Self.Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Posts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="Tags">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ProductType">
+    <End Role="ProductType" Type="Self.ProductType" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="ProductTypeId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="product_typeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tkh2022Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Categories" />
+    <EntitySet Name="Code" EntityType="Self.Code" />
+    <EntitySet Name="Companys" EntityType="Self.Companys" />
+    <EntitySet Name="ContactForm" EntityType="Self.ContactForm" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" />
+    <EntitySet Name="Faq" EntityType="Self.Faq" />
+    <EntitySet Name="Hashtags" EntityType="Self.Hashtags" />
+    <EntitySet Name="Languages" EntityType="Self.Languages" />
+    <EntitySet Name="Media" EntityType="Self.Media" />
+    <EntitySet Name="MenuCat" EntityType="Self.MenuCat" />
+    <EntitySet Name="Menus" EntityType="Self.Menus" />
+    <EntitySet Name="Pages" EntityType="Self.Pages" />
+    <EntitySet Name="PageType" EntityType="Self.PageType" />
+    <EntitySet Name="Persons" EntityType="Self.Persons" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" />
+    <EntitySet Name="PostsTags" EntityType="Self.PostsTags" />
+    <EntitySet Name="PostsTMP" EntityType="Self.PostsTMP" />
+    <EntitySet Name="PostsWP" EntityType="Self.PostsWP" />
+    <EntitySet Name="PostType" EntityType="Self.PostType" />
+    <EntitySet Name="PostType2" EntityType="Self.PostType2" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="ProductFeature" EntityType="Self.ProductFeature" />
+    <EntitySet Name="ProductType" EntityType="Self.ProductType" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" />
+    <EntitySet Name="Settings" EntityType="Self.Settings" />
+    <EntitySet Name="SiteMap" EntityType="Self.SiteMap" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" />
+    <EntitySet Name="Subes" EntityType="Self.Subes" />
+    <EntitySet Name="Tags" EntityType="Self.Tags" />
+    <EntitySet Name="Translations" EntityType="Self.Translations" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_Posts_Categories" Association="Self.FK_Posts_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hashtags_Posts" Association="Self.FK_Hashtags_Posts">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Hashtags" EntitySet="Hashtags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menus_MenuCat" Association="Self.FK_Menus_MenuCat">
+      <End Role="MenuCat" EntitySet="MenuCat" />
+      <End Role="Menus" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_PageType" Association="Self.FK_Pages_PageType">
+      <End Role="PageType" EntitySet="PageType" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_Persons" Association="Self.FK_Posts_Persons">
+      <End Role="Persons" EntitySet="Persons" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Posts_PostType" Association="Self.FK_Posts_PostType">
+      <End Role="PostType" EntitySet="PostType" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tags_Posts1" Association="Self.FK_Tags_Posts1">
+      <End Role="Posts" EntitySet="Posts" />
+      <End Role="Tags" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+      <End Role="ProductType" EntitySet="ProductType" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

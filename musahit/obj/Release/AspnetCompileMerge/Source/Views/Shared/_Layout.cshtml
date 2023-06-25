@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="tr">
+<head>
+
+    <title>TÜRKİYE KOMÜNİST HAREKETİ</title>
+    <!--meta info-->
+    <meta charset="utf-8">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>@ViewBag.Title - TKH</title>
+    <meta name="description" content="@ViewBag.MetaDescription">
+    <link rel="canonical" href="@ViewBag.canconical" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="~/Content/font/linea-basic/styles.css">
+    <link rel="stylesheet" href="~/Content/font/linea-ecommerce/styles.css">
+    <link rel="stylesheet" href="~/Content/font/linea-arrows/styles.css">
+    <link rel="stylesheet" href="~/Content/plugins/fancybox/jquery.fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/fontello.css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css">
+    <link rel="stylesheet" href="~/Content/css/style.css">
+    <link rel="stylesheet" href="~/Content/css/responsive.css">
+    <style>
+        #fixedbutton {
+            position: fixed;
+            bottom: 5px;
+            right: 50px;
+            color: #fff !important;
+            font-size: 14px;
+            width: 100px;
+            height: 45px;
+            padding: 10px 0px 0px 10px;
+            border-radius: 10px;
+            background-color: #a10000;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader"></div>
+    <div id="wrapper" class="wrapper-container">
+        <nav id="mobile-advanced" class="mobile-advanced"></nav>
+        <header id="header" class="sticky-header fixed-header header-2">
+            <div class="top-header">
+                <div class="logo-wrap">
+                    <a href="/" class="logo"><img src="/content/images/logo_kirmizi.png" alt=""></a>
+                </div>
+            </div>
+        </header>
+
+        @RenderBody()
+        <footer id="footer" class="footer">
+            
+            <div class="main-footer">
+                <div class="container">
+                    
+                </div>
+            </div>
+        </footer>
+        <a id="fixedbutton" target="_blank" href="https://api.whatsapp.com/send?phone=905415151920"><i class="icon-whatsapp"></i> WhatsApp</a>
+    </div>
+    <script src="~/Content/js/libs/jquery.modernizr.js"></script>
+    <script src="~/Content/js/libs/jquery-2.2.4.min.js"></script>
+    <script src="~/Content/js/libs/jquery-ui.min.js"></script>
+    <script src="~/Content/js/libs/retina.min.js"></script>
+    <script src="~/Content/plugins/instafeed.min.js"></script>
+    <script src="~/Content/plugins/twitter/jquery.tweet.js"></script>
+    <script src="~/Content/plugins/jquery.queryloader2.min.js"></script>
+    <script src="~/Content/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="~/Content/plugins/owl.carousel.min.js"></script>
+    <script src="~/Content/plugins/bootstrap.js"></script>
+    <script src="~/Content/js/plugins.js"></script>
+    <script src="~/Content/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

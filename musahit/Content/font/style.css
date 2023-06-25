@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Panton ';
+    src: local('Panton  Regular'), local('Panton--Regular'),
+        url('Panton-Regular.woff2') format('woff2'),
+        url('Panton-Regular.woff') format('woff'),
+        url('Panton-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+@font-face {
+    font-family: 'Panton Black';
+    src: local('Panton  Black'), local('Panton--Black'),
+        url('Panton-Black.woff2') format('woff2'),
+        url('Panton-Black.woff') format('woff'),
+        url('Panton-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+  }

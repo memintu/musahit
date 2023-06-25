@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="media-holder style-3" data-bg="/media/uploads/slogan01.png" style="background-image: url('/media/uploads/slogan01.png');">
+</div>
+<div id="content">
+
+    <div class="page-content-wrap2">
+
+        <div class="page-section type5 half-bg-col">
+            <div class="img-col-left"><div class="col-bg" data-bg="/media/uploads/secim2023_01.png" style="background-image: url('/media/uploads/secim2023_01.png');"></div></div>
+
+            <div class="container extra-size">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <span>Sandıklara sahip çıkalım!</span><br />
+                        <span>
+                            Bir oy bir oydur!
+                        </span>
+                        <h3>Müşahit kartını aldın mı?</h3>
+                        <h4>
+                            Sandık Müşahidi olmak için
+                        </h4>
+                        <h4>
+                            Aşağıdaki formu doldurman Yeterli!
+                        </h4>
+                        <div class="content-element3">
+                            <p>
+                                Seçim günü sandık başında müşahit görevlendirmesine başladık.
+                            </p><p>
+                                Sen de sandık başında bulunmak ve gözlemci olmak istersen Türkiye Komünist Hareketi’ne başvurabilir, sandık müşahidi kartını alabilirsin.
+                            </p><p>
+
+
+                                Aynı zamanda Sandık Güvenliği konulu bilgilendirme toplantısı en kısa zamanda yapılacaktır.
+                            </p><p>
+
+
+                                Sandıklara ve oyumuza sahip çıkalım, meydanı boş bırakmayalım!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-section-bg type5 half-bg-col">
+            <div class="container extra-size">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="content-element4">
+                            <h3>Sandıklara sahip çıkalım!</h3>
+                            <h3>Bir oy bir oydur!</h3>
+                        </div>
+
+                        <div class="join-us style-4">
+                            <form action="/home/musahit" enctype="multipart/form-data" method="post" class="join-form">
+                                @Html.AntiForgeryToken()
+
+                                <div class="row flex-row">
+                                    <div class="col-sm-12">
+                                        <label>Ad - Soyad</label>
+                                        <input name="name" type="text">
+                                    </div>
+                                </div>
+                                <div class="row flex-row">
+                                    <div class="col-sm-6">
+                                        <label class="required">E-Posta</label>
+                                        <input name="email" type="text">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="required">Telefon</label>
+                                        <input name="phone" type="text">
+                                    </div>
+                                </div>
+                                <div class="row flex-row">
+                                    <div class="col-sm-6">
+                                        <label class="required">İl</label>
+                                        <input name="city" type="text">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label class="required">İlçe</label>
+                                        <input name="town" type="text">
+                                    </div>
+                                </div>
+                                <div class="row flex-row">
+                                    <div class="col-sm-12">
+                                        <label class="">Hangi okulda oy kullanacaksın?</label><br />
+<a target="_blank" href="https://www.turkiye.gov.tr/yuksek-secim-kurulu-yurt-ici-secmen-kaydi-sorgulama">Nerede oy kullanacağını öğrenmek için tıkla</a>
+                                        <input name="okul" type="text">
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <button class="btn btn-style-4" type="submit">Gönder</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</div>
+
